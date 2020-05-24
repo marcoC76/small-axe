@@ -1,0 +1,186 @@
+body {
+    background-color: black;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    color: white;
+}
+
+.navbar {
+    background-color: #000000;
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Style the links inside the navigation bar */
+
+.navbar a {
+    float: left;
+    display: block;
+    color: #ffffff;
+    text-align: center;
+    padding: 14px 0px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+/* Change the color of links on hover */
+
+.navbar a:hover {
+    background-color: rgb(80, 80, 80);
+    color: black;
+}
+
+/* Hide the link that should open and close the navbar on small screens */
+
+.navbar .icon {
+    display: none;
+}
+
+.navbar h2 {
+    padding-top: 10%;
+}
+
+.tablink {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 0px;
+    font-size: 17px;
+    width: calc(100%/6);
+}
+
+.tablink:hover {
+    background-color: #777;
+}
+
+/* Style the tab content */
+
+.tabcontent {
+    color: white;
+    display: none;
+    padding: 5px;
+    text-align: center;
+    min-height: 80vh;
+}
+
+.btn {
+    border: 2px dashed rgb(0, 0, 0);
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 50px;
+}
+
+.success {
+    border-color: white;
+    color: white;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 15px;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+ 
+}
+
+.modal__dialog {
+    position: relative;
+    max-width: 500px;
+    padding: 20px;
+    margin: auto;
+    border-radius: 4px;
+    background-color: rgb(0, 0, 0);
+}
+
+.modal__close {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px;
+    background-image: none;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.modal__close:focus {
+    outline: 0;
+}
+
+.modal__header {
+    border-bottom: 1px solid #e2e2e2;
+}
+
+.modal__title {
+    margin: 0 0 15px;
+    color: white;
+}
+
+.modal__content {
+    padding: 10px 0;
+    font-size: 13px;
+    line-height: 1.6;
+    color: rgb(255, 255, 255);
+}
+
+.modal__footer {
+    padding-top: 20px;
+    border-top: 1px solid #e2e2e2;
+    text-align: right;
+   
+}
+
+.modal--fullscreen {
+    padding: 5px;
+}
+
+.modal--fullscreen .modal__dialog {
+    width: 100%;
+    max-width: none;
+    height: 80vh;
+    border-radius: 0;
+}
+
+.modal.is-modal-active {
+    display: -webkit-box;
+    display: flex;
+}
+
+/* Animation */
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
