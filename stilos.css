@@ -1,3 +1,8 @@
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
 body {
     background-color: black;
     height: 100vh;
@@ -12,16 +17,16 @@ body {
     position: fixed;
     bottom: 0;
     width: 100%;
+    height: 12%;
+    z-index: 1;
 }
 
 /* Style the links inside the navigation bar */
 
 .navbar a {
-    float: left;
     display: block;
     color: #ffffff;
     text-align: center;
-    padding: 14px 0px;
     text-decoration: none;
     font-size: 17px;
 }
@@ -40,7 +45,7 @@ body {
 }
 
 .navbar h2 {
-    padding-top: 10%;
+    padding-top: 1%;
 }
 
 .tablink {
@@ -100,6 +105,7 @@ body {
     animation-fill-mode: both;
     -webkit-animation-name: fadeIn;
     animation-name: fadeIn;
+    z-index: 3;
 }
 
 .modal__dialog {
@@ -136,9 +142,8 @@ body {
 }
 
 .modal__title {
-    margin: 0 0 15px 20px;
+    margin: 1% 0 15px 20px;
     color: white;
-    
 }
 
 .modal__content {
@@ -208,7 +213,7 @@ body {
 
 .glow-on-hover:before {
     content: '';
-    background-image: repeating-linear-gradient(135deg, rgb(148, 203, 49) 0px, rgb(148, 203, 49) 94px,rgb(12, 169, 67) 94px, rgb(12, 169, 67) 108px,rgb(238, 226, 37) 108px, rgb(238, 226, 37) 112px,rgb(102, 192, 55) 112px, rgb(102, 192, 55) 146px,rgb(193, 215, 43) 146px, rgb(193, 215, 43) 198px,rgb(57, 180, 61) 198px, rgb(57, 180, 61) 330px);
+    background-image: repeating-linear-gradient(135deg, rgb(148, 203, 49) 0px, rgb(148, 203, 49) 94px, rgb(12, 169, 67) 94px, rgb(12, 169, 67) 108px, rgb(238, 226, 37) 108px, rgb(238, 226, 37) 112px, rgb(102, 192, 55) 112px, rgb(102, 192, 55) 146px, rgb(193, 215, 43) 146px, rgb(193, 215, 43) 198px, rgb(57, 180, 61) 198px, rgb(57, 180, 61) 330px);
     position: absolute;
     top: -3px;
     left: -8px;
@@ -231,11 +236,13 @@ body {
 .glow-on-hover:active:after {
     background: transparent;
 }
+
 .glow-on-hover:hover:after {
     background: transparent;
 }
-.glow-on-hover:hover{
-    color:#000;
+
+.glow-on-hover:hover {
+    color: #000;
     font-weight: bolder;
 }
 
@@ -263,15 +270,14 @@ body {
     color: #fff;
     background: #111;
     cursor: pointer;
-    
     z-index: 0;
     border-radius: 10px;
-    margin: 3% 2%;
+    margin: 3.5% 2%;
 }
 
 .glow-on-hover-2:before {
     content: '';
-    background-image: repeating-linear-gradient(135deg, rgb(171, 44, 42) 0px, rgb(171, 44, 42) 35px,rgb(207, 49, 34) 35px, rgb(207, 49, 34) 70px,rgb(123, 26, 26) 70px, rgb(123, 26, 26) 105px);
+    background-image: repeating-linear-gradient(135deg, rgb(171, 44, 42) 0px, rgb(171, 44, 42) 35px, rgb(207, 49, 34) 35px, rgb(207, 49, 34) 70px, rgb(123, 26, 26) 70px, rgb(123, 26, 26) 105px);
     position: absolute;
     top: -3px;
     left: -9px;
@@ -294,11 +300,13 @@ body {
 .glow-on-hover-2:active:after {
     background: transparent;
 }
+
 .glow-on-hover-2:hover:after {
     background: transparent;
 }
-.glow-on-hover-2:hover{
-    color:#000;
+
+.glow-on-hover-2:hover {
+    color: #000;
     font-weight: bolder;
 }
 
@@ -318,6 +326,282 @@ body {
     border-radius: 50px;
 }
 
+/* carrulsel */
+
+/* Slideshow container */
+
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+/* Hide the images by default */
+
+.mySlides {
+    display: none;
+}
+
+/* Next & previous buttons */
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 60px;
+    user-select: none;
+}
+
+/* Position the "next button" to the right */
+
+.next {
+    right: 0;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.548);
+}
+
+/* Caption text */
+
+.text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Number text (1/3 etc) */
+
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+/* The dots/bullets/indicators */
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #ffffff81;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #55555581;
+}
+
+/* Fading animation */
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+/* cartas */
+
+.flip-card {
+    background-color: transparent;
+    width: 100%;
+    height: 200px;
+    /* border: 1px solid #f1f1f1; */
+    perspective: 1000px;
+}
+
+/* This container is needed to position the front and back side */
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+
+.flip-card-front, .flip-card-back {
+    padding-top: 15%;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    /* Safari */
+    backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+
+.flip-card-front {
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    border: white 2px dotted;
+}
+
+/* Style the back side */
+
+.flip-card-back {
+    background-color: rgb(15, 15, 15);
+    color: white;
+    border: white 2px dotted;
+    transform: rotateY(180deg);
+}
+
+/* chip */
+
+.chip {
+    display: inline-block;
+    padding: 0 25px;
+    height: 50px;
+    font-size: 16px;
+    line-height: 50px;
+    border-radius: 25px;
+    background-color: #1a1a1aad;
+}
+
+.chip img {
+    float: left;
+    margin: 0 10px 0 -25px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+/* dividir cartas */
+
+/* Split the screen in half */
+
+.split {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20%;
+}
+
+/* Control the left side */
+
+.left {
+    left: 0;
+}
+
+/* Control the right side */
+
+.right {
+    right: 0;
+}
+
+/* acordeon */
+
+.accordion {
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+    border: white 2px dotted;
+}
+
+.active-accor, .accordion:hover {
+    background-color: rgb(0, 0, 0);
+}
+
+.panel {
+    padding: 0 18px;
+    background-color: rgb(26, 26, 26);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.accordion:after {
+    content: '\002B';
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.active-accor:after {
+    content: "\2212";
+}
+
+/* tablas */
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f22a
+}
+
+/* entradas de texto */
+
+
+
+/* animaciones */
+
 @keyframes glowing {
     0% {
         background-position: 0;
@@ -327,5 +611,43 @@ body {
     }
     100% {
         background-position: 0;
+    }
+}
+
+/* Extra small devices (phones, 600px and down) */
+
+@media only screen and (max-width: 600px) {}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+
+@media only screen and (min-width: 600px) {}
+
+/* Medium devices (landscape tablets, 768px and up) */
+
+@media only screen and (min-width: 768px) {
+    .glow-on-hover {
+        width: 15%;
+        margin: 2% 1%;
+    }
+    .glow-on-hover-2 {
+        width: 5%;
+        margin: 2.2% 2%;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+
+@media only screen and (min-width: 992px) {}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+
+@media only screen and (min-width: 1200px) {
+    .glow-on-hover {
+        width: 10%;
+        margin: 1% 1%;
+    }
+    .glow-on-hover-2 {
+        width: 3%;
+        margin: 1.5% 2%;
     }
 }
