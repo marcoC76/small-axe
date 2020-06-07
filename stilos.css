@@ -524,7 +524,7 @@ body {
     z-index: 1;
     top: 0;
     overflow-x: hidden;
-    padding-top: 20%;
+    padding-top: 15%;
 }
 
 /* Control the left side */
@@ -598,8 +598,6 @@ tr:nth-child(even) {
 
 /* entradas de texto */
 
-
-
 /* animaciones */
 
 @keyframes glowing {
@@ -616,11 +614,19 @@ tr:nth-child(even) {
 
 /* Extra small devices (phones, 600px and down) */
 
-@media only screen and (max-width: 600px) {}
+@media only screen and (max-width: 600px) {
+    .split {
+        padding-top: 15%;
+    }
+}
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 
-@media only screen and (min-width: 600px) {}
+@media only screen and (min-width: 600px) {
+    .split {
+        padding-top: 10%;
+    }
+}
 
 /* Medium devices (landscape tablets, 768px and up) */
 
@@ -633,11 +639,18 @@ tr:nth-child(even) {
         width: 5%;
         margin: 2.2% 2%;
     }
+    .split {
+        padding-top: 10%;
+    }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
 
-@media only screen and (min-width: 992px) {}
+@media only screen and (min-width: 992px) {
+    .split {
+        padding-top: 10%;
+    }
+}
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 
@@ -650,4 +663,50 @@ tr:nth-child(even) {
         width: 3%;
         margin: 1.5% 2%;
     }
+    .split {
+        padding-top: 5%;
+    }
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 100%;
+    margin: 5% 2%;
+    text-align: center;
+    font-family: arial;
+    border: white 2px dotted;
+}
+
+.card button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 80%;
+    font-size: 18px;
+}
+
+.card button:hover {
+    opacity: 0.7;
+}
+
+input {
+    display: block;
+    color: dodgerblue;
+    margin: 0 auto;
+    border: none;
+    padding: 0;
+    width: 4ch;
+    background: repeating-linear-gradient(90deg, dimgrey 0, dimgrey 1ch, transparent 0, transparent 1.5ch) 0 100%/ 10ch 2px no-repeat;
+    font: 4.5ch droid sans mono, consolas, monospace;
+    letter-spacing: 0.5ch;
+
+}
+
+input:focus {
+    outline: none;
+    color: rgb(255, 255, 255);
 }
