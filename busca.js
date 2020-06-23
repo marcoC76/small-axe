@@ -25,7 +25,7 @@ function ft(appi) {
 }
 
 obj = JSON.parse(localStorage.getItem("obj"));
-console.log("objeto oroginal",obj);
+/* console.log("objeto oroginal", obj); */
 var Agrupos = [];
 var Aequipos = [];
 var grupos = [];
@@ -36,53 +36,56 @@ for (let index = 0; index < obj.length; index++) {
 }
 
 let soloHayGrupos = [...new Set(grupos)]
-console.log("Grupos que existen",soloHayGrupos);
+/* console.log("Grupos que existen", soloHayGrupos); */
 
 for (let index = 0; index < soloHayGrupos.length; index++) {
-    console.log(soloHayGrupos[index]);
+    /*   console.log(soloHayGrupos[index]); */
     var newArray = obj.filter(function (el) {
         return (el.GRUPO === soloHayGrupos[index]);
     });
-    console.log("filtrando el array por grupos",newArray);
+    /* console.log("filtrando el array por grupos", newArray); */
 
     Agrupos.push(newArray);
 
 }
 
-console.log("Array dividido por grupos",Agrupos);
+console.log("Array dividido por grupos", Agrupos);
 /* console.log(Agrupos[0].length); */
 
-var equipos = [];
-for (let g = 0; g < soloHayGrupos.length; g++) {
-    
-    for (let index = 0; index < Agrupos[g].length; index++) {
-        console.log(soloHayGrupos[g],Agrupos[g][index].EQUIPO);
+var equipos = {
+    0: [],
+    1: [],
+    2: [],
+    3: [],
+    4: [],
+    5: [],
+    6: [],
+    7: [],
+    8: []
+};
+let soloHayEquipos= {
+    0: [],
+    1: [],
+    2: [],
+    3: [],
+    4: [],
+    5: [],
+    6: [],
+    7: [],
+    8: []
+};
+for (let h = 0; h < Agrupos.length; h++) {
+   /*  console.log(Agrupos[h]); */
+    var grup = Agrupos[h];
+    for (let j = 0; j < Agrupos[h].length; j++) {
 
-
-        /* if(Agrupos[g][index].EQUIPO != "" ){
-            equipos.push(Agrupos[g][index].EQUIPO);
-        } */
-   }
-    /* console.log(equipos); */
-   
- /*   let soloHay =[...new Set(equipos)] 
-   console.log(soloHay);  */
-}
-
-
-
-
-/* var newArray = obj.filter(function (el) {
-    return (el.GRUPO === "A");
-});
-
-var equipos = [];
-for (let index = 0; index < newArray.length; index++) {
-    if(newArray[index].EQUIPO != ""){
-        equipos.push(newArray[index].EQUIPO);
+        /*  console.log("Entra 2"); */
+        equipos[h].push(Agrupos[h][j].EQUIPO);
+        
     }
+    soloHayEquipos[h] = [...new Set(equipos[h])];
+    /* console.log(soloHayEquipos[h]); */
 }
-console.log(equipos);
-
-let soloHay =[...new Set(equipos)] 
-console.log(soloHay); */
+/* console.log(equipos); */
+console.log(soloHayEquipos);
+console.log("Equipos", soloHayEquipos[0]);
